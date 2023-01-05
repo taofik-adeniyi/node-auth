@@ -15,9 +15,7 @@ const authenticationMiddleware = async (req, res, next) => {
     req.user = { id, username };
     next();
   } catch (error) {
-    throw new UnauthenticatedError(
-      "Not Authorized to access this route Could not decode"
-    );
+    throw new UnauthenticatedError("Not Authorized to access this route");
   }
 };
 module.exports = authenticationMiddleware;
